@@ -1,0 +1,117 @@
+/* Estilo general */
+body, html {
+    color: white;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background: url(https://img.freepik.com/vector-gratis/fondo-luz-neon-degradado_23-2149332915.jpg) no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.InicioLogin {
+    width: 400px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ccc;
+    padding: 20px;
+    box-sizing: border-box;
+    background: linear-gradient(45deg, #3269d1, #bd16bd, #3269d1);
+}
+
+.FormInicioLogin {
+    width: 100%;
+    padding: 10% 0;
+}
+
+.TituloLogin {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.ContenidoLogin {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.ContenidoLogin1,
+.ContenidoLogin2 {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 5px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.BotonLogin {
+    text-align: center;
+}
+
+.BTN_IS {
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    width: 100%;
+}
+
+.Empresa{
+    font-size: 30px;
+    font-family: 'Press Start 2P', cursive;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.Logo{
+    animation: logoAnimated 7s ease-in-out infinite;
+}
+
+.Informacion_General > p:nth-child(2){
+    font-size: 13px;
+}
+
+.Informacion_General{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+@keyframes logoAnimated{
+    0%{
+        transform: translateY(-3px);
+    }
+
+    25%{
+        transform: translateY(6px);
+    }
+
+    50%{
+        transform: translateY(-6px);
+    }
+
+    75%{
+        transform: translateY(6px);
+    }
+
+    100%{
+        transform: translateY(-3px);
+    }
+}

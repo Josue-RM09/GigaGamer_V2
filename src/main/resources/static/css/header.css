@@ -1,0 +1,71 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.encabezado-container{
+    background-color: rgb(44, 44, 44);
+    height: 110px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.encabezado-container > div:nth-child(1) {
+    width: 33.33%;
+    display: flex;
+    flex-direction: column;
+    font-size: 35px;
+    padding: 0 0 0 2%;
+}
+
+.encabezado-container > div:nth-child(1) > p:nth-child(2) {
+    font-size: 15px;
+    color: rgb(139, 139, 139);
+}
+
+.encabezado-container > div:nth-child(2) {
+    width: 33.33%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.encabezado-container > div:nth-child(3) {
+    width: 33.33%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.BTN_Accion{
+    width: 75%;
+    height: 50px;
+    font-size: 20px;
+    border: none;
+    font-weight: bold;
+    border-radius: 15px;
+    background: url(../img/cielo.png);
+    background-position: center;
+    background-size: cover;
+    color: white;
+
+}
+.BTN_Carrito_Cliente{
+    width: 75%;
+    height: 50px;
+    border: none;
+    filter: invert(100%);
+}
+
+
+.encabezado-container > div:nth-child(3) > form {
+    width: 100%;
+    height: 100%;
+}
+
+.color_style{
+    width: 100%;
+    height: 30px;
+    background: linear-gradient(25deg,rgb(119, 0, 255),aqua,rgb(255, 0, 234));
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" th:href="@{/css/StyleRegistro2.css}" />
+    <title>Inicio de Sesión</title>
+</head>
+<body>
+<div class="InicioLogin">
+    <div class="Empresa">
+        <p>GigaGamer</p>
+        <img th:src="@{/img/control-removebg-preview.png}" width="200" height="200" alt="logo" />
+    </div>
+    <form th:action="@{/login}" method="post" class="FormInicioLogin">
+        <div class="TituloLogin">
+            <p>Inicio de Sesión</p>
+        </div>
+        <div class="ContenidoLogin">
+            <div class="ContenidoLogin1">
+                <label for="email">Nombre:</label>
+                <input type="text" id="email" name="username" class="CorreoLogin" required />
+            </div>
+            <div class="ContenidoLogin2">
+                <label for="contraseña">Contraseña:</label>
+                <input type="password" id="contraseña" name="password" class="PasswordLogin" required />
+            </div>
+        </div>
+        <div class="BotonLogin">
+            <button type="submit" class="BTN_IS">Iniciar Sesión</button>
+        </div>
+    </form>
+    <div class="Informacion_General">
+        <p>¿Aún no tienes una cuenta? <a th:href="@{/register}">Regístrate aquí</a></p>
+        <p>2024 GigaGamer, todos los derechos reservados</p>
+    </div>
+</div>
+</body>
+</html>

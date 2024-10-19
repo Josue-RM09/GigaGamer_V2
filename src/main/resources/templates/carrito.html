@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Carrito de Compras</h1>
+<div th:if="${carrito.productos.isEmpty()}">
+    <p>El carrito está vacío.</p>
+</div>
+<div th:unless="${carrito.productos.isEmpty()}">
+    <ul>
+        <li th:each="producto : ${carrito.productos}">
+            <span th:text="${producto.nombreProducto}">Nombre</span>
+            <span th:text="${producto.precio}">Precio</span>
+        </li>
+    </ul>
+</div>
+
+</body>
+</html>

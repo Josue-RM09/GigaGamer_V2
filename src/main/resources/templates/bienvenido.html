@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Bienvenido</title>
+    <link rel="stylesheet" th:href="@{/css/StyleRegistro2.css}" />
+    <link rel="stylesheet" th:href="@{/css/StyleProduct.css}" />
+    <link rel="stylesheet" th:href="@{/css/header.css}" />
+</head>
+<body>
+<div class="encabezado_top">
+    <div class="encabezado-container">
+        <div class="primer-div-encabezado">
+            <p>Bienvenido, <span th:text="${nombre}"></span></p>
+            <p>Los Mejores articulos a los mejores precios</p>
+        </div>
+
+        <div th:if="${tipoUsuario == 'Admin'}">
+            <form th:action="@{/productos/nuevo}" method="get">
+                <button type="submit" class="agregar-nuevo">Agregar Nuevo Producto</button>
+            </form>
+        </div>
+        <div class="segundo-div-encabezado">
+            <form th:action="@{/carrito}" method="get" th:if="${tipoUsuario == 'Cliente'}">
+                <button class="BTN_Carrito_Cliente" type="submit">
+                    <img src="./img/carrito.png" width="35px" height="35px">
+                </button>
+            </form>
+        </div>
+        <div class="tercer-div-encabezado">
+            <form th:action="@{/logout}" method="post">
+                <button type="submit"  class="BTN_Accion">Cerrar Sesión</button>
+            </form>
+        </div>
+    </div>
+    <div class="color_style"></div>
+</div>
+
+<div class="img_vendedor">
+    <img src="./img/rouxls-unscreen.gif" alt="" class="img_vendedor_p">
+</div>
+<div class="productos-container">
+    <div class="OpcionCatalogo">
+        <div class="producto"  th:each="producto : ${productos}">
+            <div class="detalles_producto">
+                <div class="img_producto">
+                    <img th:src="@{${producto.img}}" alt="Imagen de ${producto.nombre_producto}"
+                         width="100%" height="100%">
+                </div>
+                <div class="informacion_general">
+                    <div class="info1">
+                        <p th:text="${producto.nombre_producto}">Nombre del Producto</p>
+                        <p th:text="${producto.descripcion}">Descripción del Producto adoji asn njak ndkan kasnkaj nklnja kln lkna skk nfjkn kjasnkla snk nflkajnslkna skljn askln kalskl ank nj</p>
+                    </div>
+                    <div class="info2">
+                        <p th:text="'Precio: $' + ${producto.precio}">Precio</p>
+                        <p th:text="'Quedan: ' + ${producto.stock}">Stok</p>
+                    </div>
+
+                    <div th:if="${tipoUsuario == 'Admin'}" class="info3">
+                        <form th:action="@{/productos/editar/{id}(id=${producto.id_producto})}" method="get">
+                            <button type="submit" class="editar">Editar</button>
+                        </form>
+                        <form th:action="@{/productos/eliminar/{id}(id=${producto.id_producto})}" method="post">
+                            <input type="hidden" name="_method" value="delete"/>
+                            <button type="submit" class="eliminar" onclick="return confirm('¿Estás seguro de eliminar este producto?')">Eliminar</button>
+                        </form>
+                    </div>
+                    </div>
+                    <div th:if="${tipoUsuario == 'Cliente'}" class="info3">
+                        <button type="submit">Agregar Al Carrito</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
